@@ -1,0 +1,23 @@
+Temeplate driven forms gives features more in HTML 
+To use it import FormsModule into ngModule.
+Add HTML Form element in your html code for and if we need control form in TS file then we will use local reference using # and in ts file,
+for ex: 
+<form #sampleForm="ngForm">
+	your form content
+</form>
+
+
+in TS file,
+@ViewChild('sampleForm') sampleForm : ngForm;
+
+and now we can use form methods using this.
+
+to submit for we have to use submit form in the form elmeent itself rather than submiting the form on button click,
+<form (ngSubmit)="submitForm()"></form>
+
+in TS file,
+submitForm(){
+	console.log("form has been submitted");
+	
+}
+

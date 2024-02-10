@@ -1,0 +1,20 @@
+<button (click)="onAnimate()">Animate</button>
+<button (click)="onShrink()">Shrink</button>
+
+<!-- <div [@divState]="state" class="anime-box">
+
+</div>
+<br>
+<div [@wildState]="wildState" class="anime-box">
+
+</div> -->
+
+<br>
+<input type="text" ngModel name="inputValue" #inputVal/>
+<button (click)="onClickMe()">Click me</button>
+
+<br>
+<ul>
+  <!-- <li *ngFor="let item of listArr" [@list1]>{{item}}</li> -->
+  <li *ngFor="let item of listArr" [@list2] (@list2.start)="onStartAnimation($event)" (@list2.done)="onEndAnimation($event)">{{item}}</li>
+</ul>

@@ -1,0 +1,19 @@
+What is an observable?
+Observable can be thought as data source.
+In Anbular we import the Observable from third party package called as RxJs.
+The observable here is implmeneted in such way that if follows Observale and we can have observer.
+In between them we have a stream of timeline and in this timeline we can have multiple events emitted by the observable, we can call it data package emitted by the observable
+
+Operators
+So we have obsersvable and then observer who listens to that data.
+So what does operator do?
+You can use build in opertaots After observable and before observer
+Observable -> Operators -> Observer
+So will now subscribe to the result of operator instead of observable directly.
+
+Subject
+What is subject?
+So subject is an special type of observable which is active
+So when to use subject, for example when user is continuesly emitting data there we should use subject. (Cross component communication using service)
+Subject is an alternative to the event emitter
+Unssubscribe your subject on destroy.

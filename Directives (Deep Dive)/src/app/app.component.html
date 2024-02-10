@@ -1,0 +1,15 @@
+<ul *ngFor="let num of evenNum">
+    <li>{{num}}</li>
+</ul>
+<div *ngIf="isOdd">
+  <ul *ngFor="let num of oddNum">
+    <li [ngStyle]="{'background-color': num % 2 == 0 ? 'green' : 'yellow'}">{{num}}</li>
+  </ul>
+</div>
+
+<button (click)="onOddEven()">Click me</button>
+
+
+<h1 appBasicHighlight  appBetterHighlight [defaultColor]="'blue'" [hoverColor]="'lightgreen'">Some basic highlight directive</h1>
+
+<h1 *appUnless="isOdd">Checking custom directive</h1>

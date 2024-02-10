@@ -1,0 +1,16 @@
+<div class="container" >
+  <form [formGroup]="projectForm" (ngSubmit)="onSubmitProjectForm()">
+    <div class="form-group">
+      <label for="">Project Name</label>
+      <input type="text" class="form-control" formControlName="projectName" placeholder="Please enter project name"/>
+      <span *ngIf="projectForm.get('projectName')?.hasError('isInvalidProjectName')">Invalid Project</span>
+      <label for="mail">Mail</label>
+      <input type="email" class="form-control" formControlName="mail" placeholder="Please enter email" />
+      <label for="">Project Status</label>
+      <select name="type" class="form-control" formControlName="projectStatus">
+        <option  *ngFor="let pStatus of projectStatus; let i = index" value="{{pStatus}}">{{pStatus | uppercase}}</option>
+      </select>
+      <button class="btn btn-primary" type="submit" [disabled]="!projectForm.valid">Submit</button>
+    </div>
+  </form>
+</div>

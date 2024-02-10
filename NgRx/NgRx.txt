@@ -1,0 +1,14 @@
+What is ngrx?
+It is a state management solution.
+It aims to help with the managment ofmore complex, (app-wide) state.
+It is an alternate way to manage complex state in components or services
+
+What is state?
+It is a data which is used on one or more components in your application.
+for ex: button is clicked then chagnes should reflect in UI.
+
+Understanding NgRx.
+You first of all need to create a store.
+ng add @ngrx/store
+Store is whre your data is stored and managed.
+A component can read data from store, which it listens to changes so angular will update the changes

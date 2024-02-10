@@ -1,0 +1,27 @@
+<div class="container">
+  <form #newForm="ngForm" (ngSubmit)="onCreatePost(newForm.value)">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" name="title" ngModel required />
+      <label for="description">Description</label>
+      <textarea type="text" class="form-control" id="description" name="description" ngModel></textarea>
+      <button type="submit" class="btn btn-secondary mt-2" [disabled]="!newForm.valid">Submit</button>
+    </div>
+    <div class="form-group mt-3">
+      <button type="button" class="btn btn-success mr-5" (click)="onGetData()">Get Data</button>
+      <button class="btn btn-danger ml-3" type="button" (click)="onClearPosts()">Clear All</button>
+      <ul *ngIf="posts.length && !isLoading && isError == null" class="list-group mt-3">
+        <li *ngFor="let post of posts" class="list-group-item">
+          <h4>{{post.title}}</h4>
+          <p>{{post.description}}</p>
+        </li>
+      </ul>
+      <div class="d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-dark d-block" role="status" *ngIf="isLoading">
+          <span class="sr-only"></span>
+        </div>
+        <div *ngIf="isError" class="alert-danger alert mt-3">Error occured! {{isError}}</div>
+      </div>
+      </div>
+  </form>
+</div>

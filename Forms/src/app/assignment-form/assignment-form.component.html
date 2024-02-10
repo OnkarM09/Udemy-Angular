@@ -1,0 +1,40 @@
+<!-- <div class="container">
+  <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="userEmail">Email</label>
+      <input class="form-control" type="email" ngModel #checkEmail="ngModel" required name="userEmail" placeholder="Please enter email" />
+      <span *ngIf="!checkEmail.valid && checkEmail.touched">Email is not valid</span>
+      <span>{{checkEmail.errors | json}}</span>
+    </div>
+    <div class="form-group mt-2">
+      <select class="form-select" aria-label="Default select example" [ngModel]="'advanced'" name="subscription">
+        <option  *ngFor="let subscription of subscriptions" value="{{subscription}}">{{subscription | uppercase}}</option>
+      </select>
+    </div>
+    <div class="form-group mt-2 shadow p-3 mb-5 bg-body-tertiary rounded">
+      <input class="form-control" type="password" ngModel required name="userPassword" #userPassword="ngModel" required placeholder="Please enter password" />
+      <span *ngIf="!userPassword.valid">Password cannot be empty!</span>
+    </div>
+    <button class="btn btn-primary mt-2" [disabled]="!form.valid">Submit</button>
+  </form>
+</div>
+
+<hr>
+<p>{{form.value | json}}</p>
+
+ -->
+
+ <div class="container">
+  <form #loginForm="ngForm" (ngSubmit)="onEnterLogin()">
+    <div class="form-group">
+      <label for="id">Id</label>
+    <input type="text" #checkId="ngModel" class="form-control" name="id" ngModel placeholder="Enter Id"  required/>
+      <span class="error danger" *ngIf="!checkId.valid && !checkId.untouched">Please enter valid id!</span>
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control mt-2" name="name" ngModel placeholder="Enter Name" />
+    </div>
+    <button class="btn btn-primary mt-2" type="submit" [disabled]="!loginForm.valid">Submit</button>
+  </form>
+ </div>

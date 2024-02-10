@@ -1,0 +1,26 @@
+<div class="container">
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <div formGroupName="loginDetails">
+        <label for="email">Email Address</label>
+        <input type="email" formControlName="email" class="form-control" />
+        <span *ngIf="!signupForm.get('loginDetails.email')?.valid && signupForm.get('loginDetails.email')?.touched">Please enter valid email</span>
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" />
+      </div>
+      <div *ngFor="let g of gender">
+        <label for="">
+          <input type="radio" name="g" [value]="g" formControlName="g">
+          {{g}}
+        </label>
+      </div>
+      <div formArrayName="userNames">
+        <button class="btn btn-secondary mb-2" type="button" (click)="onAddName()">Add Name</button>
+          <div class="form-group" *ngFor="let value of getUserNameControl(); let i = index">
+            <input type="text" class="form-control" [formControlName]="i">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-2">Submit</button>
+    </div>
+  </form>
+</div>

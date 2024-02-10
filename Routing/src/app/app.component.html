@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a routerLink="/">Home</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/servers">Servers</a></li>
+        <li role="presentation" routerLinkActive="active"><a [routerLink]="['/users']">Users</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<!-- Important to understand here,
+1. routerlink without square bracket is used for static paths so we have provided these paths in appRoute.
+2. routerlink with square bracket [routerLink] will be used for dynamic routing paths such as variables which holds those paths.
+3. routerLinkActive directive is used to add a class when that perticular route is active.
+4. [routerLinkActiveOptions] property binding is used  where exact true, where exact is a reserved property for
+   routerLinkActiveOptions and this will tell angular only add active class if the exact full path is matched. (just /)
+
+
+-->

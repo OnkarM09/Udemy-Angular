@@ -1,0 +1,17 @@
+<!-- <app-child [pushToChildProp]="title" (bpCreate)="takingFromChild($event)"></app-child>
+<button (click)="pushTOChild()">Click Me</button>
+<h1>{{childVal}}</h1> -->
+
+<!-- <input #name type="text" placeholder="Enter some data" /> -->
+<input #nameInp type="text" placeholder="Enter some data" />
+<!-- <button (click)="showInputVal(name)">Show</button> -->
+<!-- <h1>{{inputVal | json}}</h1> -->
+<app-child [pushToChildProp]="title" (bpCreate)="takingFromChild($event)">
+<h1>
+  This html will be inside ng content
+</h1></app-child>
+<button (click)="showElementRef()">Show</button>
+
+<ng-content>
+
+</ng-content>

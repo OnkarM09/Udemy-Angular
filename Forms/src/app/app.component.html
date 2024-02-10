@@ -1,0 +1,55 @@
+<!-- <form (ngSubmit)="onSubmitSampleForm()"  #sampleForm="ngForm">
+  <label for="userName">User Name</label>
+  <input type="text" name="userName" id="userName" ngModel placeholder="Enter user name" [ngModel]="'Maverick'" />
+  <br>
+  <label for="userEmail">User Email</label>
+  <input type="text" name="userEmail" id="userEmail" ngModel placeholder="Enter user email" />
+  <br>
+  <div ngModelGroup="childInputProp" #childProp="ngModelGroup">
+    <label for="childFormInput">Child Input</label>
+    <input type="text" name="childFormInput" id="childFormInput" ngModel required/>
+    <p>Child input is valid :{{childProp.valid}}</p>
+    <button (click)="addName()">Add Name</button>
+  </div>
+  <br>
+  <button type="submit">Submit</button>
+</form>
+
+<p>{{user.name}}</p>
+<p>{{user.email}}</p>
+<p>{{user.childVal}}</p>
+
+
+<form (ngSubmit)="onSubmitViewChildForm()"  #viewChildForm="ngForm">
+  <label for="userName">User Name</label>
+  <input type="text" name="userName" id="userName" ngModel placeholder="Enter user name" required />
+  <br>
+  <label for="userEmail">User Email</label>
+  <input type="text" name="userEmail" id="userEmail" ngModel placeholder="Enter user email" required email #emailForuser="ngModel" />
+  <div *ngIf="!emailForuser.valid && emailForuser.touched">email is invalid</div>
+  <br>
+  <select name="type" id="type" [ngModel]="'org'">
+    <option value="org">Organisation</option>
+    <option value="school">School</option>
+  </select>
+  <br>
+  <div *ngFor="let g of gender">
+    <label for="">
+      <input type="radio" name="g" ngModel [value]="g" [ngModel]="'male'">
+      {{g}}
+    </label>
+  </div>
+  <button type="submit" [disabled]="!viewChildForm.valid">Submit</button>
+</form> -->
+
+<!-- Template Drive From End  -->
+
+<!-- Template driven for assignment  -->
+<!-- <app-assignment-form></app-assignment-form> -->
+
+
+<!-- Reactive Form   -->
+<!-- <app-reactive-form></app-reactive-form> -->
+
+<!-- Reactive assignment  -->
+<app-reactive-assignment></app-reactive-assignment>
